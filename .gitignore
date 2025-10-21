@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+
+# Model files (LARGE - don't push to GitHub)
+outputs/
+*.pth
+*.pt
+*.ckpt
+*.h5
+
+# Data
+data/
+datasets/
+*.csv
+*.png
+*.jpg
+*.jpeg
+*.dcm
+
+# Logs
+logs/
+*.log
+*.out
+*.err
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Keep structure but ignore contents
+!outputs/.gitkeep
+!data/.gitkeep
+tb_datasets/
+.cache/

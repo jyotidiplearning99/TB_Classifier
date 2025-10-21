@@ -1,0 +1,37 @@
+# Production configuration with all best practices
+
+task_name: "TB Classification (Production)"
+project_dir: "/scratch/project_2010751/TB_Classifier"
+
+# Data
+train_csv: "metadata/train_v2.csv"
+val_csv: "metadata/val_v2.csv"
+img_size: 512
+grayscale: true
+
+# Model
+model_name: "convnextv2_base.fcmae_ft_in22k_in1k"
+dropout: 0.3
+
+# Training
+batch_size: 8
+num_epochs: 100
+lr: 0.0001
+min_lr: 0.000001
+weight_decay: 0.00001
+patience: 20
+label_smoothing: 0.1
+ema_decay: 0.999
+
+# System
+num_workers: 2
+seed: 1337
+output_dir: "outputs/tb_production"
+use_weighted_sampler: true
+
+# ✅ Domain adaptation
+dataset_boost:
+  da_db_independent: 10  # Boost small domain
+
+# ✅ Stability threshold (raised from 10)
+min_domain_samples: 30  # Need ≥30 samples for domain-specific threshold
